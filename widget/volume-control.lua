@@ -1,5 +1,6 @@
 local awful = require("awful")
 local wibox = require("wibox")
+local dpi = require("beautiful").xresources.apply_dpi
 
 -- vcontrol.mt: module (class) metatable
 -- vcontrol.wmt: widget (instance) metatable
@@ -44,13 +45,13 @@ function vcontrol.new(args)
 	sw.widget = wibox.widget({
 		max_value = 101,
 		value = 0,
-		forced_height = 18,
-		forced_width = 80,
+		forced_height = dpi(18),
+		forced_width = dpi(80),
 		paddings = 0,
 		border_width = 0,
 		margins = {
-			top = 8,
-			bottom = 8,
+			top = dpi(8),
+			bottom = dpi(8),
 		},
 		widget = wibox.widget.progressbar
 	})

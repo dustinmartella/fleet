@@ -3,6 +3,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
+local dpi = require("beautiful").xresources.apply_dpi
 
 -- Keyboard Key Control
 
@@ -109,7 +110,7 @@ function kcontrol.new(args)
 	sw.query = args.query or 'xset -q'
 	sw.toggle = args.query or 'xdotool key'
 	sw.position = args.position or "bottom_right"
-	sw.spacing = args.spacing or "5"
+	sw.spacing = args.spacing or dpi(5)
 	sw.bg = args.bg or "#222222"
 	sw.fg = args.fg or "#FFFFFF"
 	sw.font = args.font or "Monospace"
